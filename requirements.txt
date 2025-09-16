@@ -1,0 +1,16 @@
+# Python 3.11.7+ compatible requirements
+
+flask==2.2.5
+numpy==1.26.4
+pandas==2.3.1
+scikit-learn==1.5.2
+joblib==1.2.0
+xgboost==3.0.5
+matplotlib==3.10.2
+seaborn==0.13.2
+sklearn==1.7.1
+
+# Build tools (distutils replacement)
+setuptools>=80.9.0
+packaging>=22.0
+wheel>=0.45.1

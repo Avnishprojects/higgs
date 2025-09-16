@@ -1,0 +1,10 @@
+cmd
+
+C:\Users\avnis\My_Projects\Higgs-Boson-Classifier>>ssh -i "C:\Users\avnis\My_Projects\Higgs-Boson-Classifier\higgsnewkeys.pem" ubuntu@13.233.233.136
+~
+cd ~/higgsnew
+source venv/bin/activate
+export FLASK_APP=app.py
+export FLASK_ENV=development
+python3 -m flask run --host=0.0.0.0 --port=5000
+http://13.233.233.136:5000/  ----running

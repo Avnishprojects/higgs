@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Higgs Boson Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        input, select, button {
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input {
+            flex: 1 1 45%;
+        }
+        button {
+            flex: 1 1 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .prediction {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Higgs Boson Prediction</h2>
+    <form action="/predict" method="post">
+        <label>Select Model:</label>
+        <select name="model">
+            <option value="HistGradientBoosting">HistGradientBoosting</option>
+            <option value="RandomForest">RandomForest</option>
+            <option value="XGBoost">XGBoost</option>
+            <option value="LogisticRegression">LogisticRegression</option>
+        </select>
+        
+        {% for feature in features %}
+        <input type="number" step="any" name="{{ feature }}" placeholder="{{ feature }}" required>
+        {% endfor %}
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+    <div class="prediction">{{ prediction_text }}</div>
+    {% endif %}
+</body>
+</html>
